@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Paddle Ball Game</h1>
-    <p>Trying make a game.</p>    
-</body>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Paddle Ball</title>
+    <script type="text/javascript">
+      function draw() {
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+
+          ctx.fillRect(25, 250 , 25, 100);
+          ctx.fillRect(975, 250 , 25, 100);
+
+        }
+      }
+    </script>
+    <style type="text/css">
+      canvas { border: 1px solid black; }
+    </style>
+  </head>
+  <body onload="draw();">
+    <canvas id="tutorial" width="1024" height="600"></canvas>
+  </body>
 </html>
