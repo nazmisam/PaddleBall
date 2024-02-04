@@ -6,6 +6,8 @@ window.onload = function () {
     var ctx = canvas.getContext('2d');
 
     paddlesDraw(ctx, canvas)
+    ballDraw(ctx);
+    ballMove();
 
   }
 
