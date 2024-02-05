@@ -1,1 +1,1 @@
-This is for my personal project to study work my game from scratch
+This is for my personal project to create a game from scratch
