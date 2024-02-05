@@ -2,7 +2,6 @@
 var ballX = 75, ballY = 75;
 var ballSpeedX, ballSpeedY = 4;
 
-
 const BALL_SPEED_MIN = 10;
 const BALL_SPEED_MED = 18;
 const BALL_SPEED_MAX = 25;
@@ -52,23 +51,10 @@ function ballReset() {
   if (Math.random() < 0.5) {
     ballSpeedY *= -1.0;
   }
-
-
-  // center ball on screen
-  ballX = canvas.width / 2;
-  ballY = canvas.height / 2;
 }
 
 function ballDraw(ctx) {
-  colorCircle(ctx, ballX, ballY, 10, 'black');
-
-}
-
-function colorCircle(ctx, centerX, centerY, radius, fillColor) {
-  ctx.fillStyle = fillColor;
-  ctx.beginPath();
-  ctx.arc(centerX, centerY, 10, 0, Math.PI * 2, true);
-  ctx.fill();
+  fillCircle(ctx, ballX, ballY, 10, 'black');
 }
 
 function ballMove() {
@@ -111,12 +97,12 @@ function ballMove() {
 
   if (ballY < 0) { // if ball has moved beyond the top edge
     ballSpeedY *= -1; // reverse ball's vertical direction
-    ballWallSound.play();
+
   }
 
   if (ballY > canvas.height) { // if ball has moved beyond the bottom edge
     ballSpeedY *= -1; // reverse ball's vertical direction
-    ballWallSound.play();
+
   }
 
   ballX += ballSpeedX; // move the ball based on its current horizontal speed
